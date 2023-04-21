@@ -123,8 +123,11 @@ export default function Home() {
 
           <p>My current nft tokens balances</p>
           <div className="flex flex-row gap-4">
-            {tokenIdData?.map((x) => (
-              <p className=" bg-blue-300 py-3 px-3 rounded-lg text-center">
+            {tokenIdData?.map((x, index) => (
+              <p
+                key={index}
+                className=" bg-blue-300 py-3 px-3 rounded-lg text-center"
+              >
                 {" "}
                 {x.toNumber()}
               </p>
