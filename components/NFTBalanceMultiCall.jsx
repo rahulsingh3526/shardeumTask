@@ -25,7 +25,7 @@ export default function NFTBalanceMultiCall(props) {
   console.log(data);
   return (
     <div className="flex flex-col gap-4">
-      {data.pages[0].map((x, index) => (
+      {data?.pages[0].map((x, index) => (
         <>
           <p
             key={index}
