@@ -4,6 +4,7 @@ import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { Chain, polygonMumbai, goerli } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
+import dynamic from "next/dynamic";
 
 const shardeumLiberty = {
   id: 8081,
@@ -45,7 +46,7 @@ const wagmiClient = createClient({
   webSocketProvider,
 });
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains}>
@@ -54,3 +55,5 @@ export default function App({ Component, pageProps }) {
     </WagmiConfig>
   );
 }
+
+export default dynamic(() => Promise.resolve(App), { ssr: false });

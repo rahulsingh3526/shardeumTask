@@ -19,7 +19,6 @@ import NFTBalance from "../components/NFTBalanceMultiCall";
 import ReactConfetti from "react-confetti";
 import { useEffect } from "react";
 import NFTBalanceMultiCall from "../components/NFTBalanceMultiCall";
-import { IpfsImage } from "react-ipfs-image";
 
 const inter = Inter({ subsets: ["latin"] });
 
