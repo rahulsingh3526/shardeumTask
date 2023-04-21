@@ -5,33 +5,33 @@ import { IpfsImage } from "react-ipfs-image";
 function NftCard({ number }) {
   const [image, setImage] = useState("");
 
-  // useEffect(() => {
-  //   const getImageHash = async (i) => {
-  //     const tokenURI = `ipfs://QmeSjSinHpPnmXmspMjwiXyN6zS4E9zccariGR3jxcaWtq`;
-  //     const gatewayUrl = tokenURI?.replace(
-  //       "ipfs://",
-  //       "https://gateway.pinata.cloud/ipfs"
-  //     );
+  useEffect(() => {
+    const getImageHash = async (i) => {
+      const tokenURI = `ipfs://QmeSjSinHpPnmXmspMjwiXyN6zS4E9zccariGR3jxcaWtq`;
+      const gatewayUrl = tokenURI?.replace(
+        "ipfs://",
+        "https://gateway.pinata.cloud/ipfs"
+      );
 
-  //     const json = await fetch(gatewayUrl + "/" + `${i}`).then((res) =>
-  //       res.json()
-  //     );
-  //     console.log(json);
-  //     const imageurl = json.image?.replace("ipfs://", "");
-  //     setImage(imageurl);
-  //   };
-  //   getImageHash(number);
-  // }, []);
-  // console.log(image);
+      const json = await fetch(gatewayUrl + "/" + `${i}`).then((res) =>
+        res.json()
+      );
+      console.log(json);
+      const imageurl = json.image?.replace("ipfs://", "");
+      setImage(imageurl);
+    };
+    getImageHash(number);
+  }, []);
+  console.log(image);
   return (
     <div className="bg-[#764ba2] bg-opacity-40 py-6 px-4 rounded-lg">
       <div className=" relative">
-        {/* <IpfsImage
+        <IpfsImage
           hash={image}
           gatewayUrl="https://gateway.pinata.cloud/ipfs"
           alt="my image"
           className="mt-2 rounded w-[50px] h-[50px]"
-        /> */}
+        />
       </div>
       <div className="flex justify-between mt-8 mb-4">
         <div>
