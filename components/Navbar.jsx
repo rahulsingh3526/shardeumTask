@@ -29,10 +29,10 @@ function Navbar() {
             className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
           >
             {chains.map((x, index) => (
-              <li>
+              <li key={index}>
                 <button
                   disabled={!switchNetwork || x.id === chain?.id}
-                  key={index}
+                  key={x.id}
                   onClick={() => switchNetwork?.(x.id)}
                 >
                   {x.name}
